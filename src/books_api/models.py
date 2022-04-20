@@ -9,7 +9,7 @@ import uuid
 class Category(models.Model):
     name        = models.CharField(max_length=100, unique=True, blank=False, null=True) 
     slug        = models.SlugField(max_length=120, blank=True, null=True)
-    icon        = models.FileField(upload_to = "category/")
+    icon        = models.FileField(upload_to = "category/%Y/%m/%d/")
     created_at  = models.DateTimeField(auto_now_add=True,auto_now=False)
     updated_at  = models.DateTimeField(auto_now_add=False,auto_now=True)
        
@@ -66,7 +66,7 @@ class Author(models.Model):
     slug       = models.SlugField(max_length=120, blank=True, null=True)
     email      = models.EmailField(null=True)
     bio        = models.TextField()
-    pic        = models.FileField(upload_to = "author/")
+    pic        = models.FileField(upload_to = "author/%Y/%m/%d/")
     created_at= models.DateTimeField(auto_now_add=True, auto_now=False)
     updated_at= models.DateTimeField(auto_now_add=False, auto_now=True)
 
@@ -197,8 +197,8 @@ class Book(models.Model):
     publication_date = models.DateField(auto_now_add=True, auto_now=False, null=True)
     num_pages        = models.IntegerField(blank=True, null=True)
     price            = models.DecimalField(max_digits=5, decimal_places=2)
-    coverpage        = models.FileField(upload_to = "coverpage/")
-    bookpage         = models.FileField(upload_to = "bookpage/")
+    coverpage        = models.FileField(upload_to = "coverpage/%Y/%m/%d/")
+    bookpage         = models.FileField(upload_to = "bookpage/%Y/%m/%d/")
     condition        = models.CharField(max_length=20, choices= CONDITION_CHOICES, null=True, blank=False)
     stock            = models.CharField(max_length=20, choices= STOCK_CHOICES, null=True, blank=False)
     created_at       = models.DateTimeField(auto_now_add=True, auto_now=False)
