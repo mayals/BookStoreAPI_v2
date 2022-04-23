@@ -23,6 +23,7 @@ class BookSerializer(serializers.ModelSerializer):
 
 ###################################################[ CategorySerializer ]#####################################################
 class CategorySerializer(serializers.ModelSerializer):
+    
     def required(value):
         if value is None:
             raise serializers.ValidationError('This field is required')
@@ -34,7 +35,11 @@ class CategorySerializer(serializers.ModelSerializer):
                                 )
     url   = serializers.HyperlinkedIdentityField(read_only=True, view_name="category-detail",lookup_field='slug')  
     books = serializers.HyperlinkedRelatedField(many=True, read_only=True,  view_name='book-detail')
-    
+    icon = serializers.ImageField(required=True, validators=[
+                                                            required,
+                                                            UniqueValidator(queryset=Category.objects.all())
+                                                            ]
+                                )
     class Meta:
         model = Category
         fields = ['id','slug','name','url','icon','created_at','updated_at','books']

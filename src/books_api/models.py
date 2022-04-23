@@ -9,7 +9,7 @@ import uuid
 class Category(models.Model):
     name        = models.CharField(max_length=100, unique=True, blank=False, null=True) 
     slug        = models.SlugField(max_length=120, blank=True, null=True)
-    icon        = models.FileField(upload_to = "category/%Y/%m/%d/")
+    icon        = models.ImageField(upload_to = "category/%Y/%m/%d/", blank=False, null=True)
     created_at  = models.DateTimeField(auto_now_add=True,auto_now=False)
     updated_at  = models.DateTimeField(auto_now_add=False,auto_now=True)
        
@@ -66,7 +66,7 @@ class Author(models.Model):
     slug       = models.SlugField(max_length=120, blank=True, null=True)
     email      = models.EmailField(null=True)
     bio        = models.TextField()
-    pic        = models.FileField(upload_to = "author/%Y/%m/%d/")
+    pic        = models.ImageField(upload_to = "author/%Y/%m/%d/")
     created_at= models.DateTimeField(auto_now_add=True, auto_now=False)
     updated_at= models.DateTimeField(auto_now_add=False, auto_now=True)
 
