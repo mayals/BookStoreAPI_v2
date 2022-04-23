@@ -6,6 +6,7 @@ from django.conf import settings
 import uuid
 
 
+
 class Category(models.Model):
     name        = models.CharField(max_length=100, unique=True, blank=False, null=True) 
     slug        = models.SlugField(max_length=120, blank=True, null=True)
@@ -35,7 +36,9 @@ class Publisher(models.Model):
     name           = models.CharField(max_length=30, null=True)
     slug           = models.SlugField(max_length=120, blank=True, null=True)
     address        = models.CharField(max_length=50, null=True)
-    website        = models.URLField(null=True)
+    website        = models.URLField(max_length = 255, null=True)
+    created_at     = models.DateTimeField(auto_now_add=True,auto_now=False, null=True)
+    updated_at     = models.DateTimeField(auto_now_add=False,auto_now=True, null=True)
     # city           = models.CharField(max_length=60, null=True)
     # state_province = models.CharField(max_length=30, null=True)
     # country        = models.CharField(max_length=50, null=True)

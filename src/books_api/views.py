@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .serializers import CategorySerializer,BookSerializer
+from .serializers import CategorySerializer,BookSerializer,PublisherSerializer
 from rest_framework import viewsets
 from .models import Category, Book, Publisher, Author, Review, UserModel, Order, Ordering, Cart
 from django.shortcuts import get_object_or_404
@@ -12,6 +12,19 @@ from rest_framework.parsers import FormParser, MultiPartParser, JSONParser
 # https://www.django-rest-framework.org/api-guide/status-codes/#successful-2xx
 # https://www.django-rest-framework.org/api-guide/parsers/#parsers
 # https://stackoverflow.com/questions/57689088/what-are-the-parsers-used-for-in-the-django-rest-framework
+
+
+
+
+class PublisherViewSet(viewsets.ModelViewSet):
+    queryset = Publisher.objects.all()
+    serializer_class = PublisherSerializer
+    lookup_field = 'slug' 
+
+
+
+
+
 
 class CategoryViewSet(viewsets.ModelViewSet):
     queryset = Category.objects.all()

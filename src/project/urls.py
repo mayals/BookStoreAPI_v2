@@ -26,6 +26,7 @@ from django.conf.urls.static import static
 router = DefaultRouter()
 router.register('category', views.CategoryViewSet, basename = "category") # basename = must be class name with all small leter
 router.register('book', views.BookViewSet, basename = "book")            # basename = must be class name with all small leter
+router.register('publisher', views.PublisherViewSet, basename = "publisher") 
 
 
 
