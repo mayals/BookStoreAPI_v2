@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .serializers import CategorySerializer,BookSerializer,PublisherSerializer
+from .serializers import CategorySerializer, BookSerializer, PublisherSerializer, AuthorSerializer
 from rest_framework import viewsets
 from .models import Category, Book, Publisher, Author, Review, UserModel, Order, Ordering, Cart
 from django.shortcuts import get_object_or_404
@@ -22,7 +22,10 @@ class PublisherViewSet(viewsets.ModelViewSet):
     lookup_field = 'slug' 
 
 
-
+class AuthorViewSet(viewsets.ModelViewSet):
+    queryset = Author.objects.all()
+    serializer_class = AuthorSerializer
+    lookup_field = 'slug' 
 
 
 
@@ -30,9 +33,11 @@ class CategoryViewSet(viewsets.ModelViewSet):
     queryset = Category.objects.all()
     serializer_class = CategorySerializer
     lookup_field = 'slug'                 # must write this to  make slug as lookup_field
-
     # https://stackoverflow.com/questions/57689088/what-are-the-parsers-used-for-in-the-django-rest-framework
     parser_classes = [FormParser, MultiPartParser, JSONParser]   #https://www.django-rest-framework.org/api-guide/parsers/#parsers
+
+
+
 
 
     # work ok 
