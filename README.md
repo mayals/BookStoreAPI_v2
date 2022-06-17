@@ -1,6 +1,5 @@
 # BookStoreAPI_advanced
-
-I have used:
+## i have installed :
 ------------
 Django==4.0.3
 
