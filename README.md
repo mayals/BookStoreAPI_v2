@@ -1,24 +1,48 @@
 # BookStoreAPI_advanced
 
-for design i have used:
-css
-
-bootstrap 4.1.3
-
-fonawesome v5.10.0
-
-i have installed :
-Django==3.2.5
-
-django-crispy-forms==1.12.0
-
-Pillow==8.3.1
-
-psycopg2==2.9.3
-
-for heroku developement, i have installed :
-django-heroku==0.3.1
-
-gunicorn==20.1.0
-
-whitenoise==5.3.0
+I have used:
+------------
+asgiref==3.5.0
+autocommand==2.2.1
+autopep8==1.6.0
+certifi==2021.10.8
+cffi==1.15.0
+charset-normalizer==2.0.12
+coreapi==2.3.3
+coreschema==0.0.4
+cryptography==36.0.2
+defusedxml==0.7.1
+distlib==0.3.4
+Django==4.0.3
+django-cors-headers==3.11.0
+django-templated-mail==1.1.1
+djangorestframework==3.13.1
+djangorestframework-simplejwt==4.8.0
+djoser==2.1.0
+filelock==3.6.0
+idna==3.3
+MarkupSafe==2.1.1
+numpy==1.22.3
+oauthlib==3.2.0
+packaging==21.3
+path==16.4.0
+Pillow==9.1.0
+pip-run==8.8.0
+platformdirs==2.5.1
+pycodestyle==2.8.0
+pycparser==2.21
+PyJWT==2.3.0
+pyparsing==3.0.7
+python3-openid==3.2.0
+pytz==2021.3
+requests==2.27.1
+requests-oauthlib==1.3.1
+six==1.16.0
+social-auth-app-django==4.0.0
+social-auth-core==4.2.0
+sqlparse==0.4.2
+toml==0.10.2
+tzdata==2021.5
+uritemplate==4.1.1
+urllib3==1.26.9
+virtualenv==20.14.0
